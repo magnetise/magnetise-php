@@ -76,15 +76,10 @@ class Client {
     return $obj;
   }
 
-  private function makePostRequest( $from, $to, $message, $tags ) {
-    $uri = ( $this->secure ? 'https' : 'http' ) + "://{$this->hostname}/api/messages";
+  private function makePostRequest() {
+    $uri = ( $this->secure ? 'https' : 'http' ) . "://{$this->hostname}/api/messages";
 
-    $request = new \HttpRequest( $uri, HttpRequest::METH_POST );
-    $request->setHeaders(array(
-      'Content-Type' => 'application/x-www-form-urlencoded'
-    ));
-
-    $options = array(
+    $data = array(
       'message' => $this->message,
       'from' => $this->from,
       'to' => $this->to,
@@ -92,15 +87,21 @@ class Client {
     );
 
     if ( !empty( $this->tags ) ) {
-      array_merge( $options, array( 'tags' => $this->tags ) );
+      array_merge( $data, array( 'tags' => $this->tags ) );
     }
 
-    $request->addPostFields( $options );
+    $postString = http_build_query( $data, '', '&' );
 
     try {
-      $body = $request->send()->getBody();
+      $ch = curl_init( $uri );
+      curl_setopt( $ch, CURLOPT_POST, 1 );
+      curl_setopt( $ch, CURLOPT_POSTFIELDS, $postString );
+      curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 
-      return json_decode( $body );
+      $response = curl_exec( $ch );
+      curl_close( $ch );
+
+      return json_decode( $response );
     } catch ( \HttpException $ex ) {
       throw $ex;
     }
