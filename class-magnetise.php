@@ -79,7 +79,7 @@ class Client {
   private function makePostRequest( $from, $to, $message, $tags ) {
     $uri = ( $this->secure ? 'https' : 'http' ) + "://{$this->hostname}/api/messages";
 
-    $request = new HttpRequest( $uri, HttpRequest::METH_POST );
+    $request = new \HttpRequest( $uri, HttpRequest::METH_POST );
     $request->setHeaders(array(
       'Content-Type' => 'application/x-www-form-urlencoded'
     ));
@@ -101,7 +101,7 @@ class Client {
       $body = $request->send()->getBody();
 
       return json_decode( $body );
-    } catch ( HttpException $ex ) {
+    } catch ( \HttpException $ex ) {
       throw $ex;
     }
   }
