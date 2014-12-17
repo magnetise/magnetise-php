@@ -1,6 +1,6 @@
 <?php
 
-namespace Magnetise\Sms;
+namespace Magnetise;
 
 class Client {
 
