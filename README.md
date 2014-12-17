@@ -24,15 +24,15 @@ Once the environment is set up and ready, install the API client
 In your terminal run
 
 ```php
-$ php composer.phar install magnetise/magnetise-php
+$ curl -O https://raw.githubusercontent.com/magnetise/magnetise-php/master/lib/magnetise-client.php
 ```
 
 Once the API client has been installed the application can begin sending SMS messages through the SMS message API with code similar to the following
 
 ```php
-require('./path/to/magnetise-client.php');
+require('magnetise-client.php');
 
-$magnetise = \Magnetise\Client::withApiKey( 'your-api-key' );
+$client = \Magnetise\Client::withApiKey( 'your-api-key' );
 
 $res = $client->Send( "Console", "+445555889993", "SMS integration - done", "Testing, campaign 2" );
 
