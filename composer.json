@@ -1,7 +1,7 @@
 {
   "name": "magnetise/magnetise-php",
   "description": "NodeJS Client for the http://magneti.se SMS message API",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "keywords": [
     "sms",
     "text message",
