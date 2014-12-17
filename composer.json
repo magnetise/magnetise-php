@@ -1,0 +1,19 @@
+{
+  "name": "magnetise-php",
+  "description": "NodeJS Client for the http://magneti.se SMS message API",
+  "keywords": [
+    "sms",
+    "text message",
+    "mass mailing",
+    "link tracking",
+    "link shortening",
+    "unsubscribing",
+    "magnetise",
+    "api",
+    "rest",
+    "client"
+  ],
+  "homepage": "http://magneti.se",
+  "license": "MIT",
+  "author": "Magnetise"
+}
