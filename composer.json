@@ -13,7 +13,13 @@
     "rest",
     "client"
   ],
+  "author": "Magnetise",
   "homepage": "http://magneti.se",
   "license": "MIT",
-  "author": "Magnetise"
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Magnetise": "src/"
+    }
+  }
 }
