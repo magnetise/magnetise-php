@@ -1,5 +1,5 @@
 {
-  "name": "magnetise-php",
+  "name": "Magnetise\magnetise-php",
   "description": "NodeJS Client for the http://magneti.se SMS message API",
   "keywords": [
     "sms",
