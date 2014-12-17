@@ -1,6 +1,6 @@
-<?php namespace Magnetise;
+<?php
 
-date_default_timezone_set( 'UTC' );
+namespace Magnetise\Sms;
 
 class Client {
 
@@ -56,6 +56,8 @@ class Client {
 
   private function makeLocalRequest() {
     $log = "Sending message in local mode to \"{$this->to}\" with message \"{$this->message}\"\n";
+
+    date_default_timezone_set( 'UTC' );
 
     $obj = new \stdClass();
     $obj->to = $this->to;

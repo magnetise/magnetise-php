@@ -20,7 +20,8 @@
   "type": "library",
   "autoload": {
     "psr-0": {
-      "Magnetise\\": "src/"
+      "Magnetise\\Sms": "src/"
     }
-  }
+  },
+  "minimum-stability": "stable"
 }
