@@ -1,7 +1,7 @@
 {
   "name": "magnetise/magnetise-php",
   "description": "NodeJS Client for the http://magneti.se SMS message API",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "keywords": [
     "sms",
     "text message",
@@ -20,7 +20,7 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Magnetise": "src/"
+      "Magnetise\\": "src/"
     }
   }
 }
